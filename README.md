@@ -21,5 +21,5 @@ Output - a json file plan.json containing the fastests route to get from init to
 
 * Use programming language, libraries and db of your choice.
 * Any kind of online and offline documentation and resources can be used.
-* Commit your work to this gitlab repository.
+* Commit your work to this gitlab repository, in a development branch.
 * We estimate that the problem should not take you longer than half a day, but if needed you can take extra time to get it trough.
