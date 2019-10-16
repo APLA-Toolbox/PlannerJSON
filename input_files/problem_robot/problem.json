@@ -1,0 +1,4 @@
+{
+    "init" : "at_assemblypoint|drilling",
+    "goal" : "at_assemblypoint|assembling"
+}

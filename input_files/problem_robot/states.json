@@ -1,0 +1,19 @@
+
+{
+    "states": [
+        "at_charge|empty|none",
+        "at_charge|full|none",
+        "at_toolbox|empty|none",
+        "at_toolbox|full|none",
+        "at_toolbox|full|drill",
+        "at_toolbox|full|grip",
+        "at_assemblypoint|empty|none",
+        "at_assemblypoint|empty|drill",
+        "at_assemblypoint|empty|gripper",
+        "at_assemblypoint|full|none",
+        "at_assemblypoint|full|drill",
+        "at_assemblypoint|full|gripper",
+        "at_assemblypoint|drilling",
+        "at_assemblypoint|assembling"
+    ]
+}

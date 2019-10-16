@@ -1,0 +1,51 @@
+{
+    "actions": [
+    {"action": "charge","state_start": "at_charge|empty|none","state_end": "at_charge|full|none","time": 10},
+    {"action": "quick_charge","state_start": "at_charge|empty|none","state_end": "at_charge|full|none","time": 2},
+
+    {"action": "chg_to_tool_c","state_start": "at_charge|full|none","state_end":  "at_toolbox|full|none","time": 3},
+    {"action": "chg_to_tool_e","state_start": "at_charge|empty|none","state_end": "at_toolbox|empty|none","time": 5},
+    {"action": "chg_to_asmb_c","state_start": "at_charge|full|none","state_end":  "at_assemblypoint|full|none","time": 8},
+    {"action": "chg_to_asmb_e","state_start": "at_charge|empty|none","state_end": "at_assemblypoint|empty|none","time": 7},
+
+    {"action": "tool_xchg1","state_start": "at_toolbox|full|none","state_end":   "at_toolbox|full|drill",   "time": 10},
+    {"action": "tool_xchg2","state_start": "at_toolbox|full|none","state_end":   "at_toolbox|full|gripper", "time": 10},
+    {"action": "tool_xchg3","state_start": "at_toolbox|full|drill","state_end":  "at_toolbox|full|gripper", "time": 16},
+    {"action": "tool_xchg4","state_start": "at_toolbox|empty|none","state_end":  "at_toolbox|empty|drill",  "time": 10},
+    {"action": "tool_xchg5","state_start": "at_toolbox|empty|none","state_end":  "at_toolbox|empty|gripper","time": 10},
+    {"action": "tool_xchg6","state_start": "at_toolbox|empty|drill","state_end": "at_toolbox|empty|gripper","time": 16},
+
+    {"action": "tool_to_asmb1","state_start": "at_toolbox|full|drill" ,   "state_end":   "at_assemblypoint|full|drill" ,"time":  5},
+    {"action": "tool_to_asmb2","state_start": "at_toolbox|full|gripper",  "state_end":   "at_assemblypoint|full|gripper","time": 6},
+    {"action": "tool_to_asmb3","state_start": "at_toolbox|full|none"  ,   "state_end":  "at_assemblypoint|full|none"  ,"time":   7},
+    {"action": "tool_to_asmb4","state_start": "at_toolbox|empty|drill" ,  "state_end":  "at_assemblypoint|empty|drill" ,"time":  5},
+    {"action": "tool_to_asmb5","state_start": "at_toolbox|empty|gripper", "state_end":   "at_assemblypoint|empty|gripper","time":4},
+    {"action": "tool_to_asmb6","state_start": "at_toolbox|empty|none"  ,  "state_end":  "at_assemblypoint|empty|none"  ,"time":  3},
+
+    {"action": "tool_to_chg_c","state_end": "at_charge|full|none", "state_start": "at_toolbox|full|none","time": 7},
+    {"action": "tool_to_chg_e","state_end": "at_charge|empty|none","state_start": "at_toolbox|empty|none","time": 6},
+    {"action": "asmb_to_chg_c","state_end": "at_charge|full|none", "state_start": "at_assemblypoint|full|none","time": 3},
+    {"action": "asmb_to_chg_e","state_end": "at_charge|empty|none","state_start": "at_assemblypoint|empty|none","time": 5},
+
+    {"action": "tool_xchg7","state_end": "at_toolbox|full|none",  "state_start": "at_toolbox|full|drill",   "time": 10},
+    {"action": "tool_xchg8","state_end": "at_toolbox|full|none",  "state_start": "at_toolbox|full|gripper", "time": 10},
+    {"action": "tool_xchg9","state_end": "at_toolbox|full|drill", "state_start": "at_toolbox|full|gripper", "time": 16},
+    {"action": "tool_xchg10","state_end": "at_toolbox|empty|none", "state_start": "at_toolbox|empty|drill",  "time": 10},
+    {"action": "tool_xchg11","state_end": "at_toolbox|empty|none", "state_start": "at_toolbox|empty|gripper","time": 10},
+    {"action": "tool_xchg12","state_end": "at_toolbox|empty|drill","state_start": "at_toolbox|empty|gripper","time": 16},
+
+    {"action": "asmb_to_tool1","state_end": "at_toolbox|full|drill" ,   "state_start": "at_assemblypoint|full|drill" ,  "time": 4},
+    {"action": "asmb_to_tool2","state_end": "at_toolbox|full|gripper",  "state_start": "at_assemblypoint|full|gripper", "time": 5},
+    {"action": "asmb_to_tool3","state_end": "at_toolbox|full|none"  ,   "state_start": "at_assemblypoint|full|none"  ,  "time": 8},
+    {"action": "asmb_to_tool4","state_end": "at_toolbox|empty|drill" ,  "state_start": "at_assemblypoint|empty|drill" , "time": 7},
+    {"action": "asmb_to_tool5","state_end": "at_toolbox|empty|gripper", "state_start": "at_assemblypoint|empty|gripper","time": 7},
+    {"action": "asmb_to_tool6","state_end": "at_toolbox|empty|none"  ,  "state_start": "at_assemblypoint|empty|none"  , "time": 7},
+
+
+    {"action": "start_drill","state_start": "at_assemblypoint|full|drill"  ,  "state_end": "at_assemblypoint|drilling"  ,"time": 1},
+    {"action": "stop_drill","state_start": "at_assemblypoint|drilling"  ,  "state_end": "at_assemblypoint|empty|drill"  ,"time": 1},
+    {"action": "start_assembly","state_start": "at_assemblypoint|full|gripper"  ,  "state_end": "at_assemblypoint|assembling"  ,"time": 1},
+    {"action": "stop_assembly","state_start": "at_assemblypoint|assembling"  ,  "state_end": "at_assemblypoint|empty|gripper"  ,"time": 1}
+
+    ]
+}

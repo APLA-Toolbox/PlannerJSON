@@ -1,0 +1,22 @@
+{
+    "actions": [
+    {
+        "action": "action1",
+        "state_start": "state1",
+        "state_end": "state2",
+        "time": 10
+    },
+    {
+        "action": "action2",
+        "state_start": "state1",
+        "state_end": "state3",
+        "time": 12
+    },
+    {
+        "action": "action3",
+        "state_start": "state2",
+        "state_end": "state3",
+        "time": 1
+    }
+    ]
+}
