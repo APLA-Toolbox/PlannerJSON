@@ -11,11 +11,18 @@ The program should read the input files and output a json file containing the li
 #### Structure of the input and output files:
 
 Input:
-states.json  - a list of states that the robot can be in
-actions.json - a list of actions the robot can perform between states and the time it is required:
-problem.json - the initial state of the robot and the final goal
+* states.json  - a list of states that the robot can be in
+* actions.json - a list of actions the robot can perform between states and the time it is required:
+* problem.json - the initial state of the robot and the final goal
 
-Output - a json file plan.json containing the fastest (least time) route to get from the initial state to the goal state, including the total time.
+Output 
+* plan.json containing the fastest (least time) route to get from the initial state to the goal state, including the total time. The file could have the structure:
+```json
+{
+    "actions": ["action1", "action2", "action3"],
+    "time": 134
+}
+```
 
 #### Aditional instructions
 
