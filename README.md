@@ -43,7 +43,7 @@ Output
 
 * Use programming language, libraries and db of your choice.
 * Any kind of online and offline documentation and resources can be used.
-* Commit your work to this gitlab repository, in a development branch.
+* Fork this gitlab repository into a new one owned by you (private) and commit your solution in a development branch.
 * We estimate that the problem should not take you longer than half a day.
 * Even if you don't have a final solution it is important to commit your work.
 For example even you don't find the optimal path (least time), we would like to
