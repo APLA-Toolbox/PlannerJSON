@@ -11,7 +11,9 @@ class TransitionMatrix:
         for state_name, state in self.__states.items():
             self.mat[state_name] = []
             for _, action in self.__actions.items():
-                if action.state_start == state and action.state_end.name in states:
+                if action.state_start == state:
+                    if action.state_end.name not in states:
+                        print("Warning: [%s] not in the provided list of states: \n[%s]" % (str(action.state_end.name), str(states)))
                     self.mat[state_name].append((action, action.state_end, action.time))
         
     def __getitem__(self, item):
