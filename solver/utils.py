@@ -36,5 +36,25 @@ def get_states_from_json(json_file_states):
 
 def get_problem_from_json(json_file_problem):
     parsed_problem = populate(json_file_problem)
-    problem = Problem(parsed_problem["init"], parsed_problem["goal"])
+    problem = Problem(State(parsed_problem["init"]), State(parsed_problem["goal"]))
     return problem
+
+def generate_output_solved(json_file_plan, actions_path, states_path, total_time):
+    data = {
+        "actions": [],
+        "states_sequence": [],
+    }
+    for action in actions_path:
+        data["actions"].append(action.name)
+    
+    for state in states_path:
+        data["states_sequence"].append(state.name)
+
+    data["time"] = total_time
+
+    with open(json_file_plan, 'w') as outfile:
+        json.dump(data, outfile, indent=2)
+
+
+def stringify_list_objects(list_of_objects):
+    return ''.join(str(item) for item in list_of_objects)

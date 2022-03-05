@@ -1,4 +1,4 @@
-from ParserTools import *
+from utils import *
 from Graph import Graph
 import argparse
 
@@ -30,4 +30,17 @@ if __name__ == "__main__":
         exit(-1)
 
     graph = Graph(states, actions)
+    states, actions, total_time = graph.dijkstra_search(problem, graph.zero_heuristic)
+    print(stringify_list_objects(states))
+    print(stringify_list_objects(actions))
+    print(total_time)
+
+    try:
+        plan_filename = "plan.json" if args.path_to_pb[-1] == "/" else "/plan.json"
+        generate_output_solved(args.path_to_pb+plan_filename, 
+                               actions,
+                               states,
+                               total_time)
+    except Exception as e:
+        print("Failed to populate plan file: " + str(e))
     
