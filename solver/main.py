@@ -29,11 +29,12 @@ if __name__ == "__main__":
         print("Failed to parse states file: " + str(e))
         exit(-1)
 
-    graph = Graph(states, actions)
-    states, actions, total_time = graph.dijkstra_search(problem, graph.zero_heuristic)
-    print(stringify_list_objects(states))
-    print(stringify_list_objects(actions))
-    print(total_time)
+    try:
+        graph = Graph(states, actions)
+        states, actions, total_time = graph.dijkstra_search(problem, graph.zero_heuristic)
+    except Exception as e:
+        print("Failed to solve the problem: " + str(e))
+        exit(-1)
 
     try:
         plan_filename = "plan.json" if args.path_to_pb[-1] == "/" else "/plan.json"
