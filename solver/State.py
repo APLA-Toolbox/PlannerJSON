@@ -4,3 +4,6 @@ class State:
 
     def __eq__(self, state):
         return self.name == state.name
+
+    def __str__(self):
+        return "<State [%s]>" % (self.name,)

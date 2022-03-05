@@ -29,8 +29,5 @@ if __name__ == "__main__":
         print("Failed to parse states file: " + str(e))
         exit(-1)
 
-    print(states)
-    print(actions)
-    print(problem)
     graph = Graph(states, actions)
     
