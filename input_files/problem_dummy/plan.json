@@ -1,0 +1,12 @@
+{
+  "actions": [
+    "action1",
+    "action3"
+  ],
+  "states_sequence": [
+    "state1",
+    "state2",
+    "state3"
+  ],
+  "time": 11
+}
