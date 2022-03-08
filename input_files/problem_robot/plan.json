@@ -22,5 +22,13 @@
     "at_assemblypoint|full|gripper",
     "at_assemblypoint|assembling"
   ],
-  "time": 46
+  "cost": 46,
+  "deadend_states": 0,
+  "heuristic_runtimes": [],
+  "evaluated_nodes": 16,
+  "generated_nodes": 16,
+  "opened_nodes": 1,
+  "reopened_nodes": 5,
+  "runtime": 8.893013000488281e-05,
+  "expanded_nodes": 37
 }

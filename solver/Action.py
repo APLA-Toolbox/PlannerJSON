@@ -8,9 +8,6 @@ class Action:
         self.state_start = state_start
         self.state_end = state_end
         self.time = time
-    
-    def get_children(self, input_state: State, states: List[State]) -> List[State]:
-        pass
 
     def __str__(self):
         return "<Action [%s] | [%s] | [%s] | [%d]>" % (self.name, self.state_start, self.state_end, self.time)

@@ -1,16 +1,24 @@
 from time import time
-from Problem import *
-from State import *
-from Action import *
+from Problem import Problem
+from State import State
+from Action import Action
 import json
+from typing import Dict
+from Metrics import Metrics
 
-def populate(json_file):
+
+'''
+Populates a dictionary with a JSON file
+'''
+def populate(json_file: str) -> Dict:
     json_dict = dict()
     with open(json_file, 'r') as j:
         json_dict = json.loads(j.read())
     return json_dict
 
-
+'''
+Populates a dictionary of Action objects from a JSON file
+'''
 def get_actions_from_json(json_file_actions):
     actions = dict()
     parsed_actions = populate(json_file_actions)
@@ -26,6 +34,9 @@ def get_actions_from_json(json_file_actions):
     return actions
     
 
+'''
+Populates a dictionary of State objects from a JSON file
+'''
 def get_states_from_json(json_file_states):
     parsed_states = populate(json_file_states)
     states = dict()
@@ -34,12 +45,19 @@ def get_states_from_json(json_file_states):
     return states
 
 
+'''
+Populate a Problem object from a JSON file
+'''
 def get_problem_from_json(json_file_problem):
     parsed_problem = populate(json_file_problem)
     problem = Problem(State(parsed_problem["init"]), State(parsed_problem["goal"]))
     return problem
 
-def generate_output_solved(json_file_plan, actions_path, states_path, total_time):
+
+'''
+Dump the computed Plan with different informations in a Plan JSON file
+'''
+def generate_output_solved(json_file_plan, actions_path, states_path, metrics: Metrics):
     data = {
         "actions": [],
         "states_sequence": [],
@@ -50,11 +68,22 @@ def generate_output_solved(json_file_plan, actions_path, states_path, total_time
     for state in states_path:
         data["states_sequence"].append(state.name)
 
-    data["time"] = total_time
+    data["cost"] = metrics.total_cost
+    data["deadend_states"] = metrics.deadend_states
+    data["heuristic_runtimes"] = metrics.heuristic_runtimes
+    data["evaluated_nodes"] = metrics.n_evaluated
+    data["generated_nodes"] = metrics.n_generated
+    data["opened_nodes"] = metrics.n_opened
+    data["reopened_nodes"] = metrics.n_reopened
+    data["runtime"] = metrics.runtime
+    data["expanded_nodes"] = metrics.n_expended
 
     with open(json_file_plan, 'w') as outfile:
         json.dump(data, outfile, indent=2)
 
 
+'''
+Stringify a list of objects
+'''
 def stringify_list_objects(list_of_objects):
     return ''.join(str(item) for item in list_of_objects)

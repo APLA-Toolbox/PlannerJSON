@@ -4,7 +4,7 @@ from typing import Dict
 
 class Node:
     def __init__(self, state: State, g_cost: int, 
-                is_closed: bool, is_open: bool, heuristic: Dict, action: Action, parent=None):
+                is_closed: bool, is_open: bool, heuristic, action: Action, parent=None):
         self.state = state
         self.parent = parent
         self.is_open = is_open
@@ -13,7 +13,7 @@ class Node:
         self.action = action
         self.g_cost = g_cost
         self.heuristic = heuristic
-        self.h_cost = heuristic[state.name]
+        self.h_cost = heuristic.compute(state)
         self.f_cost = self.g_cost + self.h_cost
 
     def __lt__(self, other) -> bool:
